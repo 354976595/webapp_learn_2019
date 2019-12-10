@@ -1,0 +1,8 @@
+package com.learn.webapp.mapper.user;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserMapper {
+    int getListCount();
+}
