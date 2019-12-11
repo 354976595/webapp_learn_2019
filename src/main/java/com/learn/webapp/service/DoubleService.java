@@ -4,5 +4,5 @@ public interface DoubleService {
     String getString(String str);
 
     int getAtMethod();
-
+    String getMe();
 }

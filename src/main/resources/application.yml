@@ -1,8 +1,9 @@
 
 server:
   port: 8081
-mybatis:
-  mapper-locations: classpath:mapper/**/*Mapper.xml
+#mybatis:
+#  mapper-locations: classpath:mapper/**/*Mapper.xml
+
 spring:
   profiles:
     active: local
@@ -11,6 +12,19 @@ spring:
     password: root
     url: jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
 logging:
   level:
     com.learn.webapp: trace
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      id-type: auto
+      db-type: mysql
+      field-strategy: default
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-enums-package: com.learn.webapp.constract
+

@@ -15,4 +15,9 @@ public class RestControllerTest {
         System.out.println("************" + doubleService.getAtMethod());
         return doubleService.getString(req);
     }
+    @RequestMapping("/v2/test")
+    public String interface2(String req) {
+        System.out.println("************" + doubleService.getMe());
+        return doubleService.getString(req);
+    }
 }

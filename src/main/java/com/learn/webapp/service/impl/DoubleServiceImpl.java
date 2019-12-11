@@ -1,6 +1,7 @@
 package com.learn.webapp.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.learn.webapp.mapper.base.BatisMapper;
 import com.learn.webapp.mapper.user.UserMapper;
 import com.learn.webapp.service.DoubleService;
@@ -23,5 +24,12 @@ public class DoubleServiceImpl implements DoubleService {
     @Override
     public int getAtMethod() {
         return batisMapper.testOc();
+    }
+
+    @Override
+    public String getMe() {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("rule_id",1);
+        return JSONObject.toJSONString(userMapper.selectOne(queryWrapper));
     }
 }
